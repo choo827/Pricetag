@@ -1,46 +1,62 @@
-@import url('https://rsms.me/inter/inter.css');
+@import url("https://rsms.me/inter/inter.css");
 
 #selection-bubble {
-    padding: 16px;
-    color: #333333;
-    position: absolute;
-    z-index: 2147483647;
-    top: 0;
-    left: 0;
-    border-radius: 8px;
-    background: #ffffff;
-    box-sizing: border-box;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
-    font-size: 16px;
-    font-family: 'Inter', sans-serif;
+  padding: 16px;
+  color: #333333;
+  position: absolute;
+  z-index: 2147483647;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
 }
 
 #drag-currency {
-    margin-bottom: 7px;
-    color: #aaaaaa;
-    font-weight: 400;
-    max-height: 32px;
-    height: 32px;
+  margin-bottom: 7px;
+  color: #aaaaaa;
+  font-weight: 400;
+  max-height: 32px;
+  height: 32px;
 }
 
 #drag-price {
-    margin-bottom: 16px;
-    font-weight: bold;
-    font-size: 18px;
-    height: 32px;
-    max-height: 32px;
+  margin-bottom: 16px;
+  font-weight: bold;
+  font-size: 18px;
+  height: 32px;
+  max-height: 32px;
+}
+
+#copy-container {
+  display: flex;
+  margin-bottom: 7px;
 }
 
 #ex-currency {
-    margin-bottom: 7px;
-    color: #aaaaaa;
-    font-weight: 400;
-    height: 32px;
-    max-height: 32px;
+  display: flex;
+  align-items: center;
+  color: #aaaaaa;
+  font-weight: 400;
 }
 
 #ex-price {
-    font-size: 18px;
-    font-weight: bold;
-    height: 32px;
+  font-size: 18px;
+  font-weight: bold;
+  height: 32px;
+}
+
+#copy-wrapper {
+  margin-left: 8px;
+}
+
+#copy-btn {
+  width: 21px;
+  height: 21px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzg4OCIgZD0iTTIxLDguOTRhMS4zMSwxLjMxLDAsMCwwLS4wNi0uMjdsMC0uMDlhMS4wNywxLjA3LDAsMCwwLS4xOS0uMjhoMGwtNi02aDBhMS4wNywxLjA3LDAsMCwwLS4yOC0uMTkuMzIuMzIsMCwwLDAtLjA5LDBBLjg4Ljg4LDAsMCwwLDE0LjA1LDJIMTBBMywzLDAsMCwwLDcsNVY2SDZBMywzLDAsMCwwLDMsOVYxOWEzLDMsMCwwLDAsMywzaDhhMywzLDAsMCwwLDMtM1YxOGgxYTMsMywwLDAsMCwzLTNWOVMyMSw5LDIxLDguOTRaTTE1LDUuNDEsMTcuNTksOEgxNmExLDEsMCwwLDEtMS0xWk0xNSwxOWExLDEsMCwwLDEtMSwxSDZhMSwxLDAsMCwxLTEtMVY5QTEsMSwwLDAsMSw2LDhIN3Y3YTMsMywwLDAsMCwzLDNoNVptNC00YTEsMSwwLDAsMS0xLDFIMTBhMSwxLDAsMCwxLTEtMVY1YTEsMSwwLDAsMSwxLTFoM1Y3YTMsMywwLDAsMCwzLDNoM1oiLz48L3N2Zz4=);
 }

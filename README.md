@@ -22,4 +22,4 @@
 - 💵 환전 API: [exchangeratesapi](https://exchangeratesapi.io/)
 
 ## 🖥 Download
-<a href='https://chrome.google.com/webstore/detail/pricetag/cgpaenefnoalohncgpccibllnlhlmlag?utm_source=chrome-ntp-icon'><img alt='Get it on Google Play' src='https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_496x150.png' width="206px"/></a>
+<a href='https://chrome.google.com/webstore/detail/pricetag/cgpaenefnoalohncgpccibllnlhlmlag?utm_source=chrome-ntp-icon'><img alt='Get it on Google Play' src='https://storage.googleapis.com/chrome-gcs-uploader.appspot.com/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/YT2Grfi9vEBa2wAPzhWa.png' width="206px"/></a>
