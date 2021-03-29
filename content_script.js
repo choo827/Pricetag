@@ -30,10 +30,15 @@ document.addEventListener("mouseup", async (event) => {
             currency,
             dp,
             myCurrency,
-            data.toLocaleString(),
-            currency
+            data.toLocaleString()
+            // ,currency
           );
           positionBubble(r, relative, x);
+
+          copyBtn.addEventListener("click", () => {
+            alert("dfdf");
+            document.execCommand(data.toLocaleString());
+          });
         });
       } else {
         // $10000
@@ -47,10 +52,16 @@ document.addEventListener("mouseup", async (event) => {
             currency,
             dp,
             myCurrency,
-            data.toLocaleString(),
-            currency
+            data.toLocaleString()
+            // ,currency
           );
           positionBubble(r, relative, x);
+
+          document.getElementById("copy-btn").addEventListener("click", () => {
+            navigator.clipboard.writeText(data.toLocaleString()).then(() => {
+              console.log("success");
+            });
+          });
         });
       }
     } catch (e) {}
@@ -58,8 +69,10 @@ document.addEventListener("mouseup", async (event) => {
     removeBubble();
   }
 });
-document.addEventListener("mousedown", () => {
-  removeBubble();
+document.addEventListener("mouseup", (event) => {
+  if (!event.target.id == 'copy-btn') {
+    removeBubble();
+  }
 });
 const findCurrency = (rawPrice) => {
   switch (rawPrice) {
@@ -118,7 +131,7 @@ const createBubble = (_dc, _dp, _ec, _ep) => {
   bubbleDOM.appendChild(dragCurrency);
   bubbleDOM.appendChild(dragPrice);
   bubbleDOM.appendChild(copyContainer);
-  
+
   copyContainer.appendChild(exCurrency);
   copyContainer.appendChild(copyWrapper);
   copyWrapper.appendChild(copyBtn);
