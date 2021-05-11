@@ -1,28 +1,38 @@
 {
   "manifest_version": 2,
-  "version": "0.0.1",
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "description": "Sample application showing how to create an extension with Create React App",
+  "version": "0.1.0",
+  "short_name": "PriceTag",
+  "name": "PriceTag",
+  "description": "Application that can easily exchange money while browsing the web.",
+  "icons": {
+    "16": "img/favicon.ico",
+    "48": "img/logo.png",
+    "128": "img/logo.png"
+  },
   "browser_action": {
-    "default_title": "CRE",
+    "default_title": "PriceTag",
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["background.bundle.js"]
+    "scripts": [
+      "background.bundle.js"
+    ]
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["contentScript.bundle.js"]
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "contentScript.bundle.js"
+      ]
     }
   ],
-  "icons": {
-    "16": "img/icon-16.png",
-    "48": "img/icon-48.png",
-    "128": "img/icon-128.png"
-  },
   "options_page": "options.html",
-  "permissions": ["activeTab"],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
