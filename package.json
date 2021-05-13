@@ -1,7 +1,7 @@
 {
-  "name": "my-browser-extension",
+  "name": "price-tag",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -10,6 +10,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "iso-country-currency": "^0.5.3",
     "react": "^17.0.2",
     "react-browser-extension-scripts": "4.0.10",
     "react-dom": "^17.0.2",
@@ -43,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.139",
     "@types/styled-components": "^5.1.9",
     "@types/styled-system": "^5.1.11",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
