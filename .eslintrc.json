@@ -1,14 +1,6 @@
 {
-  "plugins": [
-    "prettier",
-    "@typescript-eslint",
-    "react-hooks"
-  ],
-  "extends": [
-    "airbnb-typescript",
-    "react-app",
-    "prettier"
-  ],
+  "plugins": ["prettier", "@typescript-eslint", "react-hooks"],
+  "extends": ["airbnb-typescript", "react-app", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"
@@ -25,10 +17,8 @@
     "no-underscore-dangle": "off",
     "prefer-destructuring": "off",
     "prefer-promise-reject-errors": "off",
-    "object-curly-spacing": [
-      "warn",
-      "always"
-    ],
+    "object-curly-spacing": ["warn", "always"],
+    "react/state-in-constructor": "off",
     "react/jsx-curly-newline": "off",
     "react/require-default-props": "off",
     "react/forbid-prop-types": "off",
@@ -47,7 +37,8 @@
       }
     ],
     "@typescript-eslint/naming-convention": "off",
-    "@typescript-eslint/indent": "off",
+    "indent": "off",
+    "@typescript-eslint/indent": ["off"],
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {
