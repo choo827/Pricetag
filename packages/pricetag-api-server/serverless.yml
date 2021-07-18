@@ -1,0 +1,86 @@
+service: pricetag-api-server 
+
+plugins:
+  - serverless-webpack
+  - serverless-dotenv-plugin
+  - serverless-offline
+  - serverless-offline-scheduler
+  - serverless-prune-plugin
+  - serverless-domain-manager
+  - serverless-plugin-warmup
+
+useDotenv: true
+
+custom:
+  corsConfig:
+    origin: '*'
+    headers:
+      - Content-Type
+      - X-Amz-Date
+      - Authorization
+      - X-Api-Key
+      - X-Amz-Security-Token
+      - X-Amz-User-Agent
+      - X-Amp-Device-ID
+  customDomain:
+    rest:
+      domainName: api.addpricetag.com
+      stage: ${opt:stage, 'dev'}
+      basePath: ${opt:stage, 'dev'}
+      endpointType: regional
+      createRoute53Record: true
+  webpack:
+    webpackConfig: ./webpack.config.js
+    keepOutputDirectory: true
+    includeModules: true
+    packager: yarn
+  serverless-offline:
+    httpPort: 9200
+    websocketPort: 9201
+    useChildProcesses: true
+  warmup:
+    schedule: 'cron(0/5 * * * ? *)'
+    prewarm: true
+    concurrency: 5
+    enabled: true
+    timeout: 30
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  memorySize: 1024
+  stage: ${opt:stage, 'dev'}
+  region: ap-northeast-2
+  tracing:
+    apiGateway: true
+    lambda: true
+  apiGateway:
+    minimumCompressionSize: 1024 # Enable gzip compression for responses > 1 KB
+  timeout: 30
+  environment:
+    STAGE: ${opt:stage, 'dev'}
+
+functions:
+  updateExchangeRate:
+    handler: src/schedulers/updateExchangeRate.handler
+    events:
+      - schedule: 
+          rate: rate(1 hour)
+          enabled: true
+    warmup: false
+  fetchExchangeRate:
+    handler: src/https/fetchExchangeRate.handler
+    events:
+      - http:
+          method: get
+          cors: ${self:custom.corsConfig}
+          path: /exchangerate
+    warmup: true
+  # ----------------------------------------------------------------------------------
+  defaultNotFound:
+    handler: src/https/defaultNotFound.handler
+    events:
+      - http:
+          path: /{any+} # this matches any path, the token 'any' doesn't mean anything special
+          method: ANY
+    warmup: false
